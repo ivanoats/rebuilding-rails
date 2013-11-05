@@ -1,0 +1,3 @@
+# best_quotes/Gemfile
+source 'https://rubygems.org'
+gem 'rulers_fiabane', '0.0.2'

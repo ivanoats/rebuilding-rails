@@ -1,0 +1,12 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    rack (1.5.2)
+    rulers_fiabane (0.0.2)
+      rack
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  rulers_fiabane (= 0.0.2)
