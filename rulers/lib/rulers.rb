@@ -5,6 +5,7 @@ require "rulers/routing"
 require "rulers/util"
 require "rulers/dependencies"
 require "rulers/controller"
+require "rulers/file_model"
 
 
 module Rulers
@@ -16,16 +17,16 @@ module Rulers
 			if env['PATH_INFO'] == '/'
 				return [301, {'Content-Type' => 'text/html', 'Location' => '/quotes/a_quote'}, []]
 			end
-			begin
+			#begin
 				klass, act = get_controller_and_action(env)
 				controller = klass.new(env)
 
 				text = controller.send(act)
 				`echo debug > debug.txt`;
 				[200, {'Content-Type' => 'text/html'}, [text]]
-			rescue Exception
-				[500, {'Content-Type' => 'text/html'}, ['Something went wrong. Sorry about that.']]
-			end
+			#rescue Exception
+			#	[500, {'Content-Type' => 'text/html'}, ['Something went wrong. Sorry about that.']]
+			#end
 
 		end
 	end
