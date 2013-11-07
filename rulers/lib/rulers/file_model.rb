@@ -54,7 +54,8 @@ TEMPLATE
       end
       #### UPDATE QUOTES CH 5 
       def self.update(attrs)
-        if not (q=self.find(attrs["id"])) == nil && ENV["REQUEST_METHOD"] == "POST"
+        return false if self.find(attrs["id"]).nil?
+        if ENV["REQUEST_METHOD"] == "POST"
           hash = {}
           hash["submitter"] = attrs["submitter"] || ""
           hash["quote"] = attrs["quote"] || ""
